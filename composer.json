@@ -1,0 +1,23 @@
+{
+	"name": "ofcold/icon",
+	"description": "The Font Awesome font for Icon.",
+	"type": "library",
+	"keywords": [
+		"Icon",
+		"Font",
+		"Aweson",
+		"font-awesome"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Bill li",
+			"email": "bill.li@ofcold.com"
+		}
+	],
+	"require": {
+		"php": "^7.2",
+		"symfony/var-dumper": "^4.1",
+		"illuminate/support": "^5.5"
+	}
+}

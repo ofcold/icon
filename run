@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+$icons = (array) json_decode(file_get_contents(__DIR__ . '/icons.json'));
+
+$path = '/src/icons/';
+$import = [
+	'import Vue from \'vue\'',
+	'import OfcoldIcon from \'./Icon\'',
+];
+$componetns = ['Vue.component(\'icon\', OfcoldIcon)'];
+
+foreach ($icons as $key => $val) {
+	$import[] = 'import Ofcold'. studly_case($key) .' from \'.' . $path . studly_case($key) . '\'';
+	$componetns[] .= 'Vue.component(\'' . $key . '\', Ofcold'. studly_case($key) .')';
+	file_put_contents(__DIR__ . $path . studly_case($key) . '.vue', '<template functional><path d="' . array_last($val) . '"/></template>');
+}
+
+file_put_contents(__DIR__ . '/src/index.js', implode($import, "\r\n") . "\r\n\r\n" .  implode($componetns, "\r\n"));
