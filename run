@@ -10,11 +10,11 @@ $import = [
 	'import Vue from \'vue\'',
 	'import OfcoldIcon from \'./Icon\'',
 ];
-$componetns = ['Vue.component(\'icon\', OfcoldIcon)'];
+$componetns = ['Vue.component(\'ofcold-icon\', OfcoldIcon)'];
 
 foreach ($icons as $key => $val) {
 	$import[] = 'import Ofcold'. studly_case($key) .' from \'./icons/' . studly_case($key) . '\'';
-	$componetns[] .= 'Vue.component(\'' . $key . '\', Ofcold'. studly_case($key) .')';
+	$componetns[] .= 'Vue.component(\'ofcold-icon-' . $key . '\', Ofcold'. studly_case($key) .')';
 	// file_put_contents(__DIR__ . $path . studly_case($key) . '.vue', '<template functional><path d="' . array_last($val) . '"/></template>');
 }
 

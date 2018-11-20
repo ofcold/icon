@@ -34,7 +34,7 @@ export default {
 
 	computed: {
 		iconName() {
-			return `icon-${this.type}`
+			return `ofcold-icon-${this.type}`
 		},
 	},
 }
