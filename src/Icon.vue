@@ -18,10 +18,6 @@ export default {
 			type: String,
 			default: 'delete',
 		},
-		viewBox: {
-			type: String,
-			default: '0 0 20 20',
-		},
 		width: {
 			type: [Number, String],
 			default: 20,
@@ -36,6 +32,9 @@ export default {
 		iconName() {
 			return `ofcold-icon-${this.type}`
 		},
+		viewBox() {
+			return require('./view-box')[this.type]
+		}
 	},
 }
 </script>
