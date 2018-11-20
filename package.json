@@ -1,6 +1,6 @@
 {
 	"name": "ofcold-icon",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "The Font Awesome font for Icon.",
 	"main": "src/index.js",
 	"scripts": {
