@@ -31,7 +31,7 @@
 		},
 
 		data: ()=> ({
-			icon: new Array
+			icon: []
 		}),
 
 		computed: {
@@ -43,7 +43,7 @@
 			}
 		},
 		created() {
-			const icon = new Array(IconCollections[this.type])
+			const icon = IconCollections[this.type]
 			if (icon.length < 4) {
 				new Error('The Icon name not found.')
 			}
