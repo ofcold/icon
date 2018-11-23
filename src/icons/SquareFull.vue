@@ -1,1 +1,0 @@
-<template functional><path d="M480 32v448H32V32h448m32-32H0v512h512V0z"/></template>

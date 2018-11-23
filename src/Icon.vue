@@ -6,35 +6,49 @@
 		:viewBox="viewBox"
 		:aria-labelledby="type"
 		role="presentation"
+		v-html="path"
 	>
-		<component :is="iconName" />
 	</svg>
 </template>
 
 <script>
-export default {
-	props: {
-		type: {
-			type: String,
-			default: 'delete',
-		},
-		width: {
-			type: [Number, String],
-			default: 20,
-		},
-		height: {
-			type: [Number, String],
-			default: 20,
-		},
-	},
+	const IconCollections = require('./maps')
 
-	computed: {
-		iconName() {
-			return `ofcold-icon-${this.type}`
+	export default {
+		props: {
+			type: {
+				type: String,
+				default: 'delete',
+			},
+			width: {
+				type: [Number, String],
+				default: 20,
+			},
+			height: {
+				type: [Number, String],
+				default: 20,
+			},
 		},
-		viewBox() {
-			return require('./view-box')[this.type]
+
+		data: ()=> ({
+			icon: new Array
+		}),
+
+		computed: {
+			viewBox() {
+				return `0 0 ${this.icon[0]} ${this.icon[1]}`
+			},
+			path() {
+				return this.icon[this.icon.length - 1]
+			}
+		},
+		created() {
+			const icon = new Array(IconCollections[this.type])
+			if (icon.length < 4) {
+				new Error('The Icon name not found.')
+			}
+
+			this.icon = icon
 		}
-	},
-}
+	}
 </script>
