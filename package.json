@@ -1,6 +1,6 @@
 {
 	"name": "ofcold-icon",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "The Font Awesome font for Icon.",
 	"main": "src/Icon.vue",
 	"scripts": {
