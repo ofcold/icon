@@ -6,8 +6,8 @@
 		:viewBox="viewBox"
 		:aria-labelledby="type"
 		role="presentation"
-		v-html="path"
 	>
+		<path :d="path"/>
 	</svg>
 </template>
 
