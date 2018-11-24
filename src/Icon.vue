@@ -44,7 +44,7 @@
 		},
 		created() {
 			const icon = IconCollections[this.type]
-			if (icon.length < 4) {
+			if (typeof icon !== 'array' || typeof icon !== 'object') {
 				new Error('The Icon name not found.')
 			}
 
