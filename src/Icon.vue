@@ -1,6 +1,7 @@
 <template>
 	<svg xmlns="http://www.w3.org/2000/svg"
 		class="fill-current"
+		:class="classes"
 		:width="width"
 		:height="height"
 		:viewBox="viewBox"
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-	const IconCollections = require('./maps')
+	const IconMaps = require('./maps')
 
 	export default {
 		props: {
@@ -28,6 +29,10 @@
 				type: [Number, String],
 				default: 20,
 			},
+			classes: {
+				type: [Array, Object, String],
+				default: ''
+			}
 		},
 
 		data: ()=> ({
@@ -41,19 +46,17 @@
 
 			/**
 			 * Get the icon path.
-			 *
-			 * @return {[String]}
 			 */
 			path() {
 				return this.icon[this.icon.length - 1]
 			}
 		},
 
-		created() {
-			const icon = IconCollections[this.type]
+		mounted() {
+			let icon = IconMaps[this.type]
 
-			if (typeof icon !== 'array' || typeof icon !== 'object') {
-				console.error(`The Icon ${this.type} name not found.`)
+			if (typeof icon === undefined) {
+				console.warning(`The Icon ${this.type} name not found.`)
 			}
 
 			this.icon = icon
