@@ -13,6 +13,7 @@ export default {
 		}
 
 		Vue.component('icon', Icon)
+
 		installed = true
 	}
 }

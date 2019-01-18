@@ -115,7 +115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-const IconMaps = __webpack_require__(3);
+var IconMaps = __webpack_require__(3);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'ofcold-icon',
@@ -139,31 +139,34 @@ const IconMaps = __webpack_require__(3);
 		}
 	},
 
-	data: () => ({
-		icon: []
-	}),
+	data: function data() {
+		return {
+			icon: []
+		};
+	},
 
 	computed: {
-		viewBox() {
-			return `0 0 ${this.icon[0]} ${this.icon[1]}`;
+		viewBox: function viewBox() {
+			return '0 0 ' + this.icon[0] + ' ' + this.icon[1];
 		},
+
 
 		/**
    * Get the icon path.
    */
-		path() {
+		path: function path() {
 			return this.icon[this.icon.length - 1];
 		}
 	},
 
-	mounted() {
-		let icon = IconMaps[this.type];
+	mounted: function mounted() {
+		var icon = IconMaps[this.type];
 
-		if (typeof icon === undefined) {
-			console.warning(`The Icon ${this.type} name not found.`);
+		if (typeof icon == 'undefined') {
+			console.warning('The Icon ' + this.type + ' name not found.');
 		}
 
-		this.icon = icon;
+		this.icon = IconMaps[this.type];
 	}
 });
 
@@ -178,19 +181,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return __WEBPACK_IMPORTED_MODULE_0__Icon_vue___default.a; });
 
 
-let installed = false;
+var installed = false;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
 	/**
   * Install icon.
   */
-	install(Vue) {
+	install: function install(Vue) {
 		if (installed) {
 			return;
 		}
 
 		Vue.component('icon', __WEBPACK_IMPORTED_MODULE_0__Icon_vue___default.a);
+
 		installed = true;
 	}
 });

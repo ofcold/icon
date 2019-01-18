@@ -57,11 +57,11 @@
 		mounted() {
 			let icon = IconMaps[this.type]
 
-			if (typeof icon === undefined) {
+			if (typeof(icon) == 'undefined') {
 				console.warning(`The Icon ${this.type} name not found.`)
 			}
 
-			this.icon = icon
+			this.icon = IconMaps[this.type]
 		}
 	}
 </script>
