@@ -16,6 +16,8 @@
 	const IconMaps = require('./maps')
 
 	export default {
+		name: 'ofcold-icon',
+
 		props: {
 			type: {
 				type: String,
