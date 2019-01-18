@@ -2,24 +2,56 @@
 	"name": "ofcold-icon",
 	"version": "2.0.2",
 	"description": "The Font Awesome font for Icon.",
-	"main": "src/Icon.vue",
+	"main": "dist/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "NODE_ENV=production webpack --watch --config webpack.config.js",
+		"demo": "NODE_ENV=production webpack --config webpack.config.js",
+		"build": "rm -rf dist && NODE_ENV=production webpack",
+		"prepublish": "npm run build"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ofcold/icon.git"
 	},
 	"keywords": [
+		"Web-icon",
 		"Icon",
 		"Font",
-		"Aweson",
-		"font-awesome"
+		"Ofcold-Icon"
 	],
 	"author": "Bill li",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ofcold/icon/issues"
 	},
-	"homepage": "https://github.com/ofcold/icon#readme"
+	"homepage": "https://github.com/ofcold/icon#readme",
+	"devDependencies": {
+		"babel-core": "^6.24.1",
+		"babel-loader": "^7.0.0",
+		"babel-plugin-transform-object-rest-spread": "^6.16.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-plugin-transform-vue-jsx": "^3.7.0",
+		"babel-preset-env": "^1.4.0",
+		"webpack": "^2.3.3",
+		"webpack-dev-server": "^2.4.2",
+		"webpack-merge": "^4.1.0"
+	},
+	"jest": {
+		"testRegex": "test.js$",
+		"moduleFileExtensions": [
+			"js"
+		],
+		"setupFiles": [
+			"<rootDir>/tests/bootstrap"
+		],
+		"snapshotSerializers": [
+			"<rootDir>/tests/html-serializer"
+		],
+		"transform": {
+			"^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+		}
+	},
+	"dependencies": {
+		"babel-plugin-syntax-jsx": "^6.18.0"
+	}
 }
