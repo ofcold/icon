@@ -2,7 +2,7 @@
 	"name": "ofcold-icon",
 	"version": "2.0.6",
 	"description": "The Web Font Icon.",
-	"main": "dist/index.js",
+	"main": "src/Icon.vue",
 	"scripts": {
 		"build:client": "webpack --config ./webpack.config.js --progress --hide-modules",
 		"build": "npm run build:client"
