@@ -147,7 +147,7 @@ var IconMaps = __webpack_require__(3);
 
 	computed: {
 		viewBox: function viewBox() {
-			return icon.length ? '0 0 ' + this.icon[0] + ' ' + this.icon[1] : '0 0 20 20';
+			return this.icon ? '0 0 ' + this.icon[0] + ' ' + this.icon[1] : '0 0 20 20';
 		},
 
 
