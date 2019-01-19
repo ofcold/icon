@@ -43,7 +43,7 @@
 
 		computed: {
 			viewBox() {
-				return icon.length
+				return this.icon
 					? `0 0 ${this.icon[0]} ${this.icon[1]}`
 					: '0 0 20 20'
 			},
