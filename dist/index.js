@@ -147,7 +147,7 @@ var IconMaps = __webpack_require__(3);
 
 	computed: {
 		viewBox: function viewBox() {
-			return '0 0 ' + this.icon[0] + ' ' + this.icon[1];
+			return icon.length ? '0 0 ' + this.icon[0] + ' ' + this.icon[1] : '0 0 20 20';
 		},
 
 
@@ -160,10 +160,8 @@ var IconMaps = __webpack_require__(3);
 	},
 
 	mounted: function mounted() {
-		var icon = IconMaps[this.type];
-
-		if (typeof icon == 'undefined') {
-			console.warning('The Icon ' + this.type + ' name not found.');
+		if (!IconMaps.hasOwnProperty(this.type)) {
+			console.warning('The Icon \u201C' + this.type + '\u201D name not found.');
 		}
 
 		this.icon = IconMaps[this.type];
