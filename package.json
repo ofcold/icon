@@ -1,6 +1,6 @@
 {
 	"name": "ofcold-icon",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"description": "The Web Font Icon.",
 	"main": "dist/index.js",
 	"scripts": {
