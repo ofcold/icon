@@ -43,7 +43,7 @@
 
 		computed: {
 			viewBox() {
-				return this.icon
+				return this.icon.length > 2
 					? `0 0 ${this.icon[0]} ${this.icon[1]}`
 					: '0 0 20 20'
 			},
@@ -52,13 +52,13 @@
 			 * Get the icon path.
 			 */
 			path() {
-				return this.icon[this.icon.length - 1]
+				return _.last(this.icon)
 			}
 		},
 
 		mounted() {
 			if (! IconMaps.hasOwnProperty(this.type)) {
-				console.warning(`The Icon “${this.type}” name not found.`)
+				console.error(`The Icon “${this.type}” name not found.`)
 			}
 
 			this.icon = IconMaps[this.type]

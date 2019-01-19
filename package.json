@@ -3,10 +3,6 @@
 	"version": "2.0.7",
 	"description": "The Web Font Icon.",
 	"main": "src/Icon.vue",
-	"scripts": {
-		"build:client": "webpack --config ./webpack.config.js --progress --hide-modules",
-		"build": "npm run build:client"
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ofcold/icon.git"
@@ -24,18 +20,5 @@
 	},
 	"homepage": "https://github.com/ofcold/icon#readme",
 	"devDependencies": {
-		"babel-core": "^6.0.0",
-		"babel-loader": "^6.0.0",
-		"babel-preset-latest": "^6.0.0",
-		"css-loader": "^0.25.0",
-		"file-loader": "^0.9.0",
-		"node-sass": "^4.5.0",
-		"optimize-css-assets-webpack-plugin": "^3.1.1",
-		"sass-loader": "^5.0.1",
-		"vue": "^2.5.10",
-		"vue-loader": "^11.1.4",
-		"vue-template-compiler": "^2.0.0",
-		"webpack": "^2.2.0",
-		"webpack-merge": "^4.1.0"
 	}
 }
