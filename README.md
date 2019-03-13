@@ -23,4 +23,3 @@ import Icon from 'ofcold-icon'
 | type | String| false | The icon name [All Icon Name](https://fontawesome.com/icons) |
 | width | Number, String| 20 | The icon width |
 | height | Number, String| 20 | The icon height |
-| classes | Array, Object, String| '' | The icon style |

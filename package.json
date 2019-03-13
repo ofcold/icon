@@ -1,6 +1,6 @@
 {
 	"name": "ofcold-icon",
-	"version": "2.0.7",
+	"version": "3.0.1",
 	"description": "The Web Font Icon.",
 	"main": "src/Icon.vue",
 	"repository": {
@@ -19,6 +19,5 @@
 		"url": "https://github.com/ofcold/icon/issues"
 	},
 	"homepage": "https://github.com/ofcold/icon#readme",
-	"devDependencies": {
-	}
+	"devDependencies": {}
 }

@@ -1,7 +1,6 @@
 <template>
 	<svg xmlns="http://www.w3.org/2000/svg"
 		class="fill-current"
-		:class="classes"
 		:width="width"
 		:height="height"
 		:viewBox="viewBox"
@@ -30,10 +29,6 @@
 			height: {
 				type: [Number, String],
 				default: 20,
-			},
-			classes: {
-				type: [Array, Object, String],
-				default: ''
 			}
 		},
 
